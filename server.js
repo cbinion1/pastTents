@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 const methodOverride = require('method-override');
-const session = require('express-sesison');
+const session = require('express-session');
 
 // require db
 require('./db/db');
