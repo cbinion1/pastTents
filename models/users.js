@@ -1,11 +1,11 @@
 const mongoose = require('mongoose');
-const Campsite = require('./campsites');
+const Review = require('./review');
 
 const userSchema = mongoose.Schema({
 	username: {type: String},
 	password: {type: String},
-	reviews: {type: String}
-	photos: {type: String},
+	displayname: {type: String},
+	reviews: [Review.schema],
 });
 
-module.exports = mongoose.mdoel('User', userSchema);
+module.exports = mongoose.model('User', userSchema);
