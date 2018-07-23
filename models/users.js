@@ -1,11 +1,11 @@
 const mongoose = require('mongoose');
-const Review = require('./review');
+//const Review = require('./review');
 
-const userSchema = mongoose.Schema({
+const userSchema = new mongoose.Schema({
 	username: {type: String},
 	password: {type: String},
 	displayname: {type: String},
-	reviews: [Review.schema],
+	reviews: {type: String},
 });
 
 module.exports = mongoose.model('User', userSchema);

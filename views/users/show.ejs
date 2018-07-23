@@ -1,5 +1,29 @@
 <% include ../partials/_header %>
 
-<!-- Code goes here -->
+<h1>Show Page for <%=users.name%></h1>
+<nav>
+  <ul>
+    <li><a href="/">Home</a></li>
+    <li><a href="/users">Campers Index</a></li>
+  </ul>
+</nav>
+</header>
+<main>
+<section>
+  <h2>Campers Attributes</h2>
+  <ul>
+    <li>Name: <%=users.name%></li>
+  </ul>
+</section>
+
+<section>
+  <a href="/users/<%=users.id%>/edit">Edit</a>
+</section>
+
+<section>
+  <form action="/users/<%=users.id%>?_method=DELETE" method="POST">
+    <button type="submit">Delete Camper</button>
+  </form>
+</section>
 
 <% include ../partials/_footer %>

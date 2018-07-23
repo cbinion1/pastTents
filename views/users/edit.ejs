@@ -1,5 +1,18 @@
 <% include ../partials/_header %>
 
-<!-- Code goes here -->
+<h1>Edit <%=users.name%></h1>
+    <nav>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/users">Campers Index</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <h2>Camper attributes</h2>
+    <form action="/users/<%=author.id%>?_method=PUT" method="POST">
+      <input type="text" name="name" value="<%=users.name%>"><br>
+      <button type="submit">Update Campers</button>
+    </form>
 
 <% include ../partials/_footer %>
