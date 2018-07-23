@@ -27,12 +27,12 @@ app.use(express.static(__dirname + '/public'));
 // require our controllers
 const usersController = require('./controllers/users');
 const campsitesController = require('./controllers/campsites');
-const authController = require('./controllers/auth');
+const reviewsController = require('./controllers/reviews');
 
 // set up controller routes
 app.use('/users', usersController);
 app.use('/campsites', campsitesController);
-app.use('/auth', authController);
+app.use('/reviews', reviewsController);
 
 // set up passport
 const User = require('./models/users');
@@ -40,7 +40,7 @@ passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 passport.use(new localStrategy(User.authenticate()));
 
-// Login Routes
+// Main and Index Routes
 
 app.get('/', (req, res) => {
 	res.render('main.ejs');
