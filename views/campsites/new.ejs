@@ -1,5 +1,141 @@
 <% include ../partials/_header %>
 
-<!-- Code goes here -->
+<div class="container">
+	<div class="row">
+		<div class="col-xs-12">
+			<h1>Add a Campsite</h1>
+			<p>Thank you for adding a campsite to Past Tents!<br>Please provide as much detail as you can.</p>
+		</div>
+	</div>
+
+	<form method="POST" action="/campsites">
+		
+		<div class="form-group">
+			<div class="row">
+				<div class="col-xs-12">
+					<label for="campsiteLocation">Campsite Name</label>
+					<input type="text" class="form-control" id="campsiteLocation" name="location">
+				</div>
+			</div>
+		</div>
+		
+		<div class="form-group">
+			<div class="row">
+				<div class="col-xs-12">
+					<label for="campsiteOverview">Overview</label>
+					<textarea class="form-control" id="campsiteOverview" rows="3" name="overview"></textarea>
+				</div>
+			</div>
+		</div>
+		
+
+		<div class="form-group">
+			<div class="row">
+				<div class="col-xs-12">
+					<label for="campsiteDetails">Details</label>
+					<textarea class="form-control" id="campsiteDetails" rows="3" name="details"></textarea>
+				</div>
+			</div>
+		</div>
+		
+		<div class="form-group">
+			<div class="row">
+				<div class="col-xs-12">
+					<label><img src="/images/rv.png">RV Sites</label>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-12">
+					<label class="radio-inline"><input type="radio" name="rv_sites" value="yes"> Yes</label>
+					<label class="radio-inline"><input type="radio" name="rv_sites" value="no"> No</label>
+					<label class="radio-inline"><input type="radio" name="rv_sites" value="unknown"> Unknown</label>
+				</div>
+			</div>
+		</div>
+
+		<div class="form-group">
+			<div class="row">
+				<div class="col-xs-12">
+					<label><img src="/images/tents.png">Tent Sites</label>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-12">
+					<label class="radio-inline"><input type="radio" name="tent_sites" value="yes"> Yes</label>
+					<label class="radio-inline"><input type="radio" name="tent_sites" value="no"> No</label>
+					<label class="radio-inline"><input type="radio" name="tent_sites" value="unknown"> Unknown</label>
+				</div>
+			</div>
+		</div>
+
+		<div class="form-group">
+			<div class="row">
+				<div class="col-xs-12">
+					<label><img src="/images/fires.png">Fire Rings</label>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-12">
+					<label class="radio-inline"><input type="radio" name="fire_rings" value="yes"> Yes</label>
+					<label class="radio-inline"><input type="radio" name="fire_rings" value="no"> No</label>
+					<label class="radio-inline"><input type="radio" name="fire_rings" value="unknown"> Unknown</label>
+				</div>
+			</div>
+		</div>
+
+		<div class="form-group">
+			<div class="row">
+				<div class="col-xs-12">
+					<label><img src="/images/pets.png">Pets Allowed</label>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-12">
+					<label class="radio-inline"><input type="radio" name="pets_allowed" value="yes"> Yes</label>
+					<label class="radio-inline"><input type="radio" name="pets_allowed" value="no"> No</label>
+					<label class="radio-inline"><input type="radio" name="pets_allowed" value="unknown"> Unknown</label>
+				</div>
+			</div>
+		</div>
+
+		<div class="form-group">
+			<div class="row">
+				<div class="col-xs-12">
+					<label><img src="/images/water.png">Drinking Water</label>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-12">
+					<label class="radio-inline"><input type="radio" name="drinking_water" value="yes"> Yes</label>
+					<label class="radio-inline"><input type="radio" name="drinking_water" value="no"> No</label>
+					<label class="radio-inline"><input type="radio" name="drinking_water" value="unknown"> Unknown</label>
+				</div>
+			</div>
+		</div>
+
+		<div class="form-group">
+			<div class="row">
+				<div class="col-xs-12">
+					<label><img src="/images/toilets.png">Toilets</label>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-12">
+					<label class="radio-inline"><input type="radio" name="toilets" value="yes"> Yes</label>
+					<label class="radio-inline"><input type="radio" name="toilets" value="no"> No</label>
+					<label class="radio-inline"><input type="radio" name="toilets" value="unknown"> Unknown</label>
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-xs-12">
+				<button type="submit" class="btn btn-primary">Submit</button>
+			</div>
+		</div>
+
+	</form>
+
+</div>
 
 <% include ../partials/_footer %>
