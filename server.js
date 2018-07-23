@@ -55,7 +55,7 @@ app.get('/index', isLoggedIn, (req, res) => {
 
 // show sign up form
 app.get('/join', (req, res) => {
-	res.render('join.ejs');
+	res.render('auth/join.ejs');
 });
 
 // handling user sign up
@@ -65,7 +65,7 @@ app.post('/join', (req, res) => {
 	User.register(new User({username: req.body.username}), req.body.password, (err, user) => {
 		if (err) {
 			console.log(err);
-			res.render('join.ejs');
+			res.render('auth/join.ejs');
 		}
 		passport.authenticate('local')(req, res, function () {
 			res.redirect('/index');
@@ -78,7 +78,7 @@ app.post('/join', (req, res) => {
 
 // render login form
 app.get('/login', (req, res) => {
-	res.render('login.ejs');
+	res.render('auth/login.ejs');
 });
 
 // login logic
