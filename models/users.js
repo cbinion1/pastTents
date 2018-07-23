@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
-const Review = require('./review');
+const Review = require('./reviews');
 
-const userSchema = mongoose.Schema({
+const userSchema = new mongoose.Schema({
 	username: {type: String},
 	password: {type: String},
 	displayname: {type: String},
