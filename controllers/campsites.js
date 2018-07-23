@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const Campsites = require('../models/campsites');
-const Users = require('../models/users');
+const Reviews = require('../models/reviews');
 
 // Index Route
 router.get('/', async (req, res, next) => {
@@ -23,8 +23,13 @@ router.get('/new', (req, res) => {
 // Show Route
 router.get('/:id', (req, res) => {
 	Campsites.findById(req.params.id, (err, foundCampsite) => {
-		res.render('campsites/show.ejs', {
-			campsite: foundCampsite
+		console.log(foundCampsite, ' this is foundCampsite');
+		// Find all reviews on this campsite
+		Reviews.find({'campsites.location': req.params.location}, (err, foundReviews) => {
+			res.render('campsites/show.ejs', {
+				campsite: foundCampsite,
+				reviews: foundReviews
+			});
 		});
 	});
 });
