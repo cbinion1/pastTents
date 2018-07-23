@@ -11,7 +11,7 @@
     <h2>List of Campers</h2>
     <ul>
       <% for (let i = 0; i < users.length; i++){%>
-           <li><a href="/users/<%=users[i].id%>"><%=users[i].name %></a></li>
+           <li><a href="/users/<%=users[i].id%>"><%=users[i].username%></a></li>
       <%}%>
     </ul>
 <% include ../partials/_footer %>
