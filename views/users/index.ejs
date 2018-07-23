@@ -1,5 +1,17 @@
 <% include ../partials/_header %>
-
-<!-- Code goes here -->
-
+<h1>Campers</h1>
+    <nav>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/users/new">Create a new Camper</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <h2>List of Campers</h2>
+    <ul>
+      <% for (let i = 0; i < users.length; i++){%>
+           <li><a href="/users/<%=authors[i].id%>"><%=users[i].name %></a></li>
+      <%}%>
+    </ul>
 <% include ../partials/_footer %>

@@ -21,13 +21,13 @@ app.use(express.static(__dirname + '/public'));
 
 // require our controllers
 const usersController = require('./controllers/users');
-const campsitesController = require('./controllers/campsites');
-const authController = require('./controllers/auth');
+//const campsitesController = require('./controllers/campsites');
+//const authController = require('./controllers/auth');
 
 // set up controller routes
 app.use('/users', usersController);
-app.use('/campsites', campsitesController);
-app.use('/auth', authController);
+//app.use('/campsites', campsitesController);
+//app.use('/auth', authController);
 
 app.get('/', (req, res) => {
 	res.render('main.ejs');
