@@ -2,3 +2,8 @@
     width: auto;
     height: auto;
 }
+
+#copyright {
+    font-size: 10px;
+    text-align: center;
+}
