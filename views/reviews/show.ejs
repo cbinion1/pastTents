@@ -1,0 +1,30 @@
+<% include ../partials/_header %>
+
+<h1>Show Page for <%=reviews.location%></h1>
+    <nav>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/reviews">Review Index</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section>
+      <h2>Review</h2>
+      <ul>
+        <li>Name: <%=reviews.location%></li>
+      </ul>
+    </section>
+
+    <section>
+      <a href="/reviews/<%=reviews.id%>/edit">Edit</a>
+    </section>
+
+    <section>
+      <form action="/reviews/<%=reviews.id%>?_method=DELETE" method="POST">
+        <button type="submit">Delete Reveiw</button>
+      </form>
+    </section>
+  </main>
+
+<% include ../partials/_footer %>

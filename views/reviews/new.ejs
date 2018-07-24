@@ -1,0 +1,19 @@
+<% include ../partials/_header %>
+
+<h1>Create an Review</h1>
+    <nav>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/reviews/index">Reviews Index</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <form action="/reviews" method="POST">
+      <input type="text" name="location" placeholder="Location"><br/>
+      <textarea placeholder="Enter Review Here"></textarea><br/>
+      <button type="submit">submit</button>
+    </form>
+
+<% include ../partials/_footer %>
