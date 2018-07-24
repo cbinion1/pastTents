@@ -5,6 +5,7 @@ const methodOverride = require('method-override');
 const session = require('express-session');
 const passport = require('passport');
 const localStrategy = require('passport-local');
+const GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
 const passportLocalMongoose = require('passport-local-mongoose');
 
 // require db
@@ -36,9 +37,23 @@ app.use('/reviews', reviewsController);
 
 // set up passport
 const User = require('./models/users');
-passport.serializeUser(User.serializeUser());
-passport.deserializeUser(User.deserializeUser());
+// passport.serializeUser(User.serializeUser());
+// passport.deserializeUser(User.deserializeUser());
 passport.use(new localStrategy(User.authenticate()));
+
+passport.serializeUser((user, done) => done(null, user));
+passport.deserializeUser((user, done) => done(null, user));
+passport.use(new GoogleStrategy({
+    clientID: "316136943987-ofqcnosgte4ionkd7q50jojqu5h1i05a.apps.googleusercontent.com",
+    clientSecret: "R_Bdwc2QcHz2Pl1zBaqmthzf",
+    callbackURL: "http://localhost:3000/auth/google/callback"
+  },
+  function(accessToken, refreshToken, profile, done) {
+       User.findOrCreate({ googleId: profile.id, displayName: profile.displayName }, function (err, user) {
+         return done(err, user);
+       });
+  }
+));
 
 // Main and Index Routes
 
@@ -94,12 +109,31 @@ app.get('/logout', (req, res) => {
 	res.redirect('/');
 });
 
-function isLoggedIn(req, res, next) {
-	if(req.isAuthenticated()) {
+function isLoggedIn (req, res, next) {
+	if(req.user) {
+		console.log('Authenticated');
 		return next();
+	} else {
+			console.log('Not Authenticated');
+			res.redirect('/login')
 	}
-	res.redirect('/login')
 };
+
+// Google routes
+app.get('/auth/google',
+  passport.authenticate('google', { scope: ['https://www.googleapis.com/auth/plus.login'] }));
+
+app.get('/auth/google/callback', 
+  passport.authenticate('google', { failureRedirect: '/login' }),
+  function(req, res) {
+  	req.session.save(() => {
+  		console.log('successful google login');
+  		console.log(req.user);
+  		console.log(session);
+    	res.redirect('/index');
+  	});
+  	console.log(req.session, ' this is req.session');
+  });
 
 // listen
 app.listen(3000, () => {
