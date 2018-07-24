@@ -11,8 +11,9 @@
   <main>
     <h2>Review</h2>
     <form action="/reviews/<%=reviews.id%>?_method=PUT" method="POST">
-      <textarea></textarea><br>
-      <button type="submit">Update Review</button>
+        <input type="text" name="location" placeholder="Location"><br/>
+        <textarea placeholder="Change Your Review Here"></textarea><br>
+        <button type="submit">Update Review</button>
     </form>
 
 <% include ../partials/_footer %>
