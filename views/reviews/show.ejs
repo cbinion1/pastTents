@@ -12,18 +12,12 @@
     <section>
       <h2>Review</h2>
       <ul>
-        <li>Name: <%=reviews.location%></li>
+        <li><%=reviews.location%></li>
       </ul>
     </section>
 
     <section>
       <a href="/reviews/<%=reviews.id%>/edit">Edit</a>
-    </section>
-
-    <section>
-      <form action="/reviews/<%=reviews.id%>?_method=DELETE" method="POST">
-        <button type="submit">Delete Reveiw</button>
-      </form>
     </section>
   </main>
 
