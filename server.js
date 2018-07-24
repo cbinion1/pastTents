@@ -37,8 +37,8 @@ app.use('/reviews', reviewsController);
 
 // set up passport
 const User = require('./models/users');
-passport.serializeUser(User.serializeUser());
-passport.deserializeUser(User.deserializeUser());
+// passport.serializeUser(User.serializeUser());
+// passport.deserializeUser(User.deserializeUser());
 passport.use(new localStrategy(User.authenticate()));
 
 passport.serializeUser((user, done) => done(null, user));
@@ -109,12 +109,14 @@ app.get('/logout', (req, res) => {
 	res.redirect('/');
 });
 
-function isLoggedIn(req, res, next) {
-	if(req.isAuthenticated()) {
+function isLoggedIn (req, res, next) {
+	if(req.user) {
+		console.log('Authenticated');
 		return next();
+	} else {
+			console.log('Not Authenticated');
+			res.redirect('/login')
 	}
-	console.log('user is not authenticated at isLoggedIn');
-	res.redirect('/login')
 };
 
 // Google routes
@@ -124,9 +126,13 @@ app.get('/auth/google',
 app.get('/auth/google/callback', 
   passport.authenticate('google', { failureRedirect: '/login' }),
   function(req, res) {
-  	console.log('successful google login');
-  	console.log(req.user);
-    res.redirect('/index');
+  	req.session.save(() => {
+  		console.log('successful google login');
+  		console.log(req.user);
+  		console.log(session);
+    	res.redirect('/index');
+  	});
+  	console.log(req.session, ' this is req.session');
   });
 
 // listen
