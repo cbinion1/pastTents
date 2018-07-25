@@ -1,13 +1,13 @@
 <% include ../partials/_header %>
 
 <div class="row">
-  <div class="col-auto mr-auto">
+  <div class="col">
     <h1>Leave a Review</h1>
     <p>Thank you for reviewing a campsite!</p>
   </div>
 </div>
 <div class="row">
-  <div class="col-auto mr-auto">
+  <div class="col">
     <form action="/reviews" method="POST">
       <select name="campsiteId">
         <% for (let i = 0; i < campsites.length; i++) { %>

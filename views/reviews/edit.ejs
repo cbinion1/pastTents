@@ -1,13 +1,13 @@
 <% include ../partials/_header %>
 
 <div class="row">
-  <div class="col-auto mr-auto">
+  <div class="col">
     <h1>Edit Review for <%=review.location%></h1>
   </div>
 </div>
 <div class="row">
-  <div class="col-auto mr-auto">
-    <form action="/reviews<%=review.id%>?_method=PUT"" method="POST">
+  <div class="col">
+    <form action="/reviews/<%=review.id%>?_method=PUT"" method="POST">
       <select name="campsiteId">
         <% for (let i = 0; i < campsites.length; i++) { %>
           <option value="<%=campsites[i].id%>"
@@ -19,16 +19,17 @@
       </select>
       <br>
       <br>
-      <textarea class="form-control" id="reviewBody" rows="5" name="body" value="review.body"></textarea>
+      <textarea class="form-control" id="reviewBody" rows="5" name="body"><%=review.body%></textarea>
       <br>
       <button class="btn btn-primary" type="submit">Update Review</button>
     </form>
   </div>
 </div>
+<br>
 <div class="row">
-  <div class="col-auto mr-auto">
+  <div class="col">
     <form action="/reviews/<%=review.id%>?_method=DELETE" method="POST">
-      <button type="submit">Delete Reveiw</button>
+      <button class="btn btn-primary" type="submit">Delete Review</button>
     </form>
   </div>
 </div>
