@@ -89,8 +89,18 @@
 	<div class="row">
 		<div class="col">
 			<h4>Reviews</h4>
-			<p><%=campsite.reviews%></p>
 		</div>
+	</div>
+	<div>
+		<% for(let i = 0; i < campsite.reviews.length; i++) { %>
+			<div class="reviewSection">
+				<div class="row">
+					<div class="col">
+						<p><%=campsite.reviews[i].body%></p>
+					</div>
+				</div>
+			</div>
+		<% } %>
 	</div>
 	<div class="row">
 		<div class="col">
