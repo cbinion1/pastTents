@@ -1,25 +1,36 @@
 <% include ../partials/_header %>
 
-<h1>Edit <%=reviews.location%></h1>
-    <nav>
-      <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="/users">Campers Index</a></li>
-      </ul>
-    </nav>
-  </header>
-  <main>
-    <h2>Review</h2>
-    <form action="/reviews/<%=reviews.id%>?_method=PUT" method="POST">
-        <input type="text" name="location" value="<%=reviews.location%>"><br/>
-        <textarea name="body"><%=reviews.body%></textarea><br>
-        <button type="submit">Update Review</button>
+<div class="row">
+  <div class="col-auto mr-auto">
+    <h1>Edit Review for <%=review.location%></h1>
+  </div>
+</div>
+<div class="row">
+  <div class="col-auto mr-auto">
+    <form action="/reviews<%=review.id%>?_method=PUT"" method="POST">
+      <select name="campsiteId">
+        <% for (let i = 0; i < campsites.length; i++) { %>
+          <option value="<%=campsites[i].id%>"
+            <% if(campsites[i]._id.toString() === reviewCampsite._id.toString()) { %>
+            selected
+            <% } %>
+          ><%=campsites[i].location%></option>
+        <% } %>
+      </select>
+      <br>
+      <br>
+      <textarea class="form-control" id="reviewBody" rows="5" name="body" value="review.body"></textarea>
+      <br>
+      <button class="btn btn-primary" type="submit">Update Review</button>
     </form>
-
-    <section>
-      <form action="/reviews/<%=reviews.id%>?_method=DELETE" method="POST">
-        <button type="submit">Delete Reveiw</button>
-      </form>
-    </section>
+  </div>
+</div>
+<div class="row">
+  <div class="col-auto mr-auto">
+    <form action="/reviews/<%=review.id%>?_method=DELETE" method="POST">
+      <button type="submit">Delete Reveiw</button>
+    </form>
+  </div>
+</div>
 
 <% include ../partials/_footer %>

@@ -1,23 +1,26 @@
 <% include ../partials/_header %>
 
-<h1>Create an Review</h1>
-    <nav>
-      <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="/reviews/index">Reviews Index</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <main>
+<div class="row">
+  <div class="col-auto mr-auto">
+    <h1>Leave a Review</h1>
+    <p>Thank you for reviewing a campsite!</p>
+  </div>
+</div>
+<div class="row">
+  <div class="col-auto mr-auto">
     <form action="/reviews" method="POST">
       <select name="campsiteId">
         <% for (let i = 0; i < campsites.length; i++) { %>
         <option value="<%=campsites[i].id%>"><%=campsites[i].location%></option>
         <% } %>
-      </select><br>
-      <textarea name="body" placeholder="Enter Review Here"></textarea><br/>
-      <button type="submit">submit</button>
+      </select>
+      <br>
+      <br>
+      <textarea class="form-control" id="reviewBody" rows="5" name="body" placeholder="Enter Review Here"></textarea>
+      <br>
+      <button class="btn btn-primary" type="submit">submit</button>
     </form>
+  </div>
+</div>
 
 <% include ../partials/_footer %>
