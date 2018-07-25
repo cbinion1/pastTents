@@ -11,7 +11,11 @@
 
   <main>
     <form action="/reviews" method="POST">
-      <input type="text" name="location" placeholder="Location"><br/>
+      <select name="campsiteId">
+        <% for (let i = 0; i < campsites.length; i++) { %>
+        <option value="<%=campsites[i].id%>"><%=campsites[i].location%></option>
+        <% } %>
+      </select><br>
       <textarea name="body" placeholder="Enter Review Here"></textarea><br/>
       <button type="submit">submit</button>
     </form>

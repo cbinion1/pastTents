@@ -15,7 +15,11 @@ router.get('/', (req, res) => {
 
 // New Route
 router.get('/new', (req, res) => {
-	res.render('reviews/new.ejs');
+  Campsites.find({}, (err, allCampsites) => {
+    res.render('reviews/new.ejs', {
+      campsites: allCampsites
+    });
+  });
 });
 
 // Show Route
@@ -46,10 +50,19 @@ router.get('/:id', (req, res) => {
 
 // Post Route
   router.post('/', (req, res) => {
-    console.log(req.body)
-    Reviews.create(req.body, (err, createdReviews) => {
-      console.log(createdReviews, ' this is the created review');
-      res.redirect('/reviews');
+    console.log(req.body, ' this is req.body')
+    // create a review, push a copy into the Campsite reviews array
+    Campsites.findById(req.body.campsiteId, (err, foundCampsite) => {
+      console.log(foundCampsite, ' this is foundCampsite');
+      console.log(foundCampsite.location, ' this is foundCampsite.location');
+      req.body.location = foundCampsite.location;
+      console.log(req.body, ' this is 2nd req.body');
+      Reviews.create(req.body, (err, createdReview) => {
+        foundCampsite.reviews.push(createdReview);
+        foundCampsite.save((err, data) => {
+          res.redirect('/reviews');
+        });
+      });
     });
   });
   
