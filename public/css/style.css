@@ -4,7 +4,8 @@
 }
 #mainPageCarousel {
     margin: auto;
-    max-height: 700px
+    max-width: 1000px;
+    max-height: 500px
 }
 #copyright {
     font-size: 10px;
@@ -22,6 +23,7 @@ body {
 .navbar {
     background: #DEAE1D;
 }
+
 
 
 
