@@ -1,9 +1,24 @@
-.carousel-inner {
-    width: auto;
-    height: auto;
+#title {
+    font-family: 'Permanent Marker', cursive;
+    font-size: 80px;
 }
-
+#mainPageCarousel {
+    margin: auto;
+}
 #copyright {
     font-size: 10px;
     text-align: center;
 }
+.carousel-caption {
+    font-family: 'Gloria Hallelujah', cursive;
+}
+
+
+
+
+
+
+
+
+
+
