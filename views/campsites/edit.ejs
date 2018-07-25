@@ -2,7 +2,7 @@
 
 <div class="container">
 	<div class="row">
-		<div class="col-xs-12">
+		<div class="col">
 			<h1>Edit a Campsite</h1>
 			<p>Thank you for providing updated campsite information to Past Tents!</p>
 		</div>
@@ -12,7 +12,7 @@
 		
 		<div class="form-group">
 			<div class="row">
-				<div class="col-xs-12">
+				<div class="col">
 					<label for="campsiteLocation">Campsite Name</label>
 					<input type="text" class="form-control" id="campsiteLocation" name="location" value="<%=campsite.location%>">
 				</div>
@@ -21,7 +21,7 @@
 		
 		<div class="form-group">
 			<div class="row">
-				<div class="col-xs-12">
+				<div class="col">
 					<label for="campsiteOverview">Overview</label>
 					<textarea class="form-control" id="campsiteOverview" rows="3" name="overview"><%=campsite.overview%></textarea>
 				</div>
@@ -31,7 +31,7 @@
 
 		<div class="form-group">
 			<div class="row">
-				<div class="col-xs-12">
+				<div class="col">
 					<label for="campsiteDetails">Details</label>
 					<textarea class="form-control" id="campsiteDetails" rows="3" name="details"><%=campsite.details%></textarea>
 				</div>
@@ -40,13 +40,13 @@
 		
 		<div class="form-group">
 			<div class="row">
-				<div class="col-xs-12">
+				<div class="col">
 					<label><img src="/images/rv.png">RV Sites</label>
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-xs-12">
-					<label class="radio-inline"><input type="radio" name="rv_sites" <% if (campsite.rv_sites === "yes") { %> checked="checked"<% } %>> Yes</label>
+				<div class="col">
+					<label class="radio-inline"><input type="radio" name="rv_sites" value="yes"<% if (campsite.rv_sites === "yes") { %> checked="checked"<% } %>> Yes</label>
 					<label class="radio-inline"><input type="radio" name="rv_sites" value="no" <% if (campsite.rv_sites === "no") { %> checked="checked"<% } %>> No</label>
 					<label class="radio-inline"><input type="radio" name="rv_sites" value="unknown" <% if (campsite.rv_sites === "unknown") { %> checked="checked"<% } %>> Unknown</label>
 				</div>
@@ -55,12 +55,12 @@
 
 		<div class="form-group">
 			<div class="row">
-				<div class="col-xs-12">
+				<div class="col">
 					<label><img src="/images/tents.png">Tent Sites</label>
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-xs-12">
+				<div class="col">
 					<label class="radio-inline"><input type="radio" name="tent_sites" value="yes" <% if (campsite.tent_sites === "yes") { %> checked="checked"<% } %>> Yes</label>
 					<label class="radio-inline"><input type="radio" name="tent_sites" value="no" <% if (campsite.tent_sites === "no") { %> checked="checked"<% } %>> No</label>
 					<label class="radio-inline"><input type="radio" name="tent_sites" value="unknown" <% if (campsite.tent_sites === "unknown") { %> checked="checked"<% } %>> Unknown</label>
@@ -70,12 +70,12 @@
 
 		<div class="form-group">
 			<div class="row">
-				<div class="col-xs-12">
+				<div class="col">
 					<label><img src="/images/fires.png">Fire Rings</label>
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-xs-12">
+				<div class="col">
 					<label class="radio-inline"><input type="radio" name="fire_rings" value="yes" <% if (campsite.fire_rings === "yes") { %> checked="checked"<% } %>> Yes</label>
 					<label class="radio-inline"><input type="radio" name="fire_rings" value="no" <% if (campsite.fire_rings === "no") { %> checked="checked"<% } %>> No</label>
 					<label class="radio-inline"><input type="radio" name="fire_rings" value="unknown" <% if (campsite.fire_rings === "unknown") { %> checked="checked"<% } %>> Unknown</label>
@@ -85,12 +85,12 @@
 
 		<div class="form-group">
 			<div class="row">
-				<div class="col-xs-12">
+				<div class="col">
 					<label><img src="/images/pets.png">Pets Allowed</label>
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-xs-12">
+				<div class="col">
 					<label class="radio-inline"><input type="radio" name="pets_allowed" value="yes" <% if (campsite.pets_allowed === "yes") { %> checked="checked"<% } %>> Yes</label>
 					<label class="radio-inline"><input type="radio" name="pets_allowed" value="no" <% if (campsite.pets_allowed === "no") { %> checked="checked"<% } %>> No</label>
 					<label class="radio-inline"><input type="radio" name="pets_allowed" value="unknown" <% if (campsite.pets_allowed === "unknown") { %> checked="checked"<% } %>> Unknown</label>
@@ -100,12 +100,12 @@
 
 		<div class="form-group">
 			<div class="row">
-				<div class="col-xs-12">
+				<div class="col">
 					<label><img src="/images/water.png">Drinking Water</label>
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-xs-12">
+				<div class="col">
 					<label class="radio-inline"><input type="radio" name="drinking_water" value="yes" <% if (campsite.drinking_water === "yes") { %> checked="checked"<% } %>> Yes</label>
 					<label class="radio-inline"><input type="radio" name="drinking_water" value="no" <% if (campsite.drinking_water === "no") { %> checked="checked"<% } %>> No</label>
 					<label class="radio-inline"><input type="radio" name="drinking_water" value="unknown" <% if (campsite.drinking_water === "unknown") { %> checked="checked"<% } %>> Unknown</label>
@@ -115,12 +115,12 @@
 
 		<div class="form-group">
 			<div class="row">
-				<div class="col-xs-12">
+				<div class="col">
 					<label><img src="/images/toilets.png">Toilets</label>
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-xs-12">
+				<div class="col">
 					<label class="radio-inline"><input type="radio" name="toilets" value="yes" <% if (campsite.toilets === "yes") { %> checked="checked"<% } %>> Yes</label>
 					<label class="radio-inline"><input type="radio" name="toilets" value="no" <% if (campsite.toilets === "no") { %> checked="checked"<% } %>> No</label>
 					<label class="radio-inline"><input type="radio" name="toilets" value="unknown" <% if (campsite.toilets === "unknown") { %> checked="checked"<% } %>> Unknown</label>
@@ -128,23 +128,8 @@
 			</div>
 		</div>
 
-<!-- 		<div class="form-group">
-			<div class="row">
-				<div class="col-xs-12">
-					<label><img src="../../public/img/zombies.png">Zombies</label>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-xs-12">
-					<label class="radio-inline"><input type="radio" name="zombies" value="yes"> Yes</label>
-					<label class="radio-inline"><input type="radio" name="zombies" value="no"> No</label>
-					<label class="radio-inline"><input type="radio" name="zombies" value="unknown"> Unknown</label>
-				</div>
-			</div>
-		</div> -->
-
 		<div class="row">
-			<div class="col-xs-12">
+			<div class="col">
 				<button type="submit" class="btn btn-primary">Save</button>
 			</div>
 		</div>
@@ -153,7 +138,7 @@
 	<br>
 
 	<div class="row">
-		<div class="col-xs-12">
+		<div class="col">
 			<form action="/campsites/<%=campsite.id%>?_method=DELETE" method="POST">
 				<button class="btn btn-info">Delete Campsite</button>
 			</form>

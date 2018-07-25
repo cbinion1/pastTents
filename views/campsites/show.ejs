@@ -2,12 +2,12 @@
 
 <div class="container">
 	<div class="row">
-		<div class="col-xs-12">
+		<div class="col">
 			<h1><%= campsite.location %></h1>
 		</div>
 	</div>
 	<div class="row">
-		<div class="col-xs-12">
+		<div class="col">
 			<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
 				<ol class="carousel-indicators">
 				  <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -38,62 +38,62 @@
 	</div>
 	<div class="row">
 		<% if (campsite.rv_sites === "yes") { %>
-			<div class="col-xs-2">
+			<div class="col">
 				<img src="/images/rv.png">
 				<p>RV Sites</p>
 			</div>
 		<% } %>
 		<% if (campsite.tent_sites === "yes") { %>
-			<div class="col-xs-2">
+			<div class="col">
 				<img src="/images/tents.png">
 				<p>Tent Sites</p>
 			</div>
 		<% } %>
 		<% if (campsite.fire_rings === "yes") { %>
-			<div class="col-xs-2">
+			<div class="col">
 				<img src="/images/fires.png">
 				<p>Fire Rings</p>
 			</div>
 		<% } %>
 		<% if (campsite.pets_allowed === "yes") { %>
-			<div class="col-xs-2">
+			<div class="col">
 				<img src="/images/pets.png">
-				<p>RV Sites</p>
+				<p>Pets Allowed</p>
 			</div>
 		<% } %>
 		<% if (campsite.drinking_water === "yes") { %>
-			<div class="col-xs-2">
+			<div class="col">
 				<img src="/images/water.png">
-				<p>RV Sites</p>
+				<p>Drinking Water</p>
 			</div>
 		<% } %>
 		<% if (campsite.toilets === "yes") { %>
-			<div class="col-xs-2">
+			<div class="col">
 				<img src="/images/toilets.png">
-				<p>RV Sites</p>
+				<p>Toilets Available</p>
 			</div>
 		<% } %>
 	</div>
 	<div class="row">
-		<div class="col-xs-12">
+		<div class="col">
 			<h4>Overview</h4>
 			<p><%=campsite.overview%></p>
 		</div>
 	</div>
 	<div class="row">
-		<div class="col-xs-12">
+		<div class="col">
 			<h4>Details</h4>
 			<p><%=campsite.details%></p>
 		</div>
 	</div>
 	<div class="row">
-		<div class="col-xs-12">
+		<div class="col">
 			<h4>Reviews</h4>
 			<p><%=campsite.reviews%></p>
 		</div>
 	</div>
 	<div class="row">
-		<div class="col-xs-12">
+		<div class="col">
 			<a class="btn btn-info" href="/campsites/<%=campsite.id%>/edit">Edit Campsite</a>
 		</div>
 	</div>
