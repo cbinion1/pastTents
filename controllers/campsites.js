@@ -3,6 +3,7 @@ const router = express.Router();
 const Campsites = require('../models/campsites');
 const Reviews = require('../models/reviews');
 
+
 // Index Route
 router.get('/', async (req, res, next) => {
 	try {
