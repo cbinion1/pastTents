@@ -4,8 +4,7 @@
 }
 #mainPageCarousel {
     margin: auto;
-    max-width: 1000px;
-    max-height: 500px
+    max-height: 60%;
 }
 #copyright {
     font-size: 10px;
@@ -32,9 +31,16 @@ body {
 p {
     margin: 0;
 }
+/* Welcome Page */
 
+#welcome-header {
+    text-align: center;
+    font-family: 'Permanent Marker', cursive;
 
-
-
+}
+.card {
+    display: inline-block;
+    margin: 12px;
+}
 
 
