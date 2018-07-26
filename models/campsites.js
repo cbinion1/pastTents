@@ -12,6 +12,7 @@ const campsiteSchema = new mongoose.Schema({
 	drinking_water: {type: String},
 	toilets: {type: String},
 	reviews: [Review.schema],
+	photos: [],
 });
 
 module.exports = mongoose.model('Campsite', campsiteSchema);
