@@ -6,34 +6,50 @@
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
   <!-- My Custom CSS -->
   <link rel="stylesheet" type="text/css" href="/css/style.css">
+  <!-- Google Font families -->
+  <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah|Permanent+Marker" rel="stylesheet">
 </head>
 <body>
 	<nav class="navbar navbar-expand-lg navbar-light">
-  	<a class="navbar-brand" href="/">Past Tents</a>
+  	<a class="navbar-brand" id="title" href="/">Past Tents</a>
   	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
     	<span class="navbar-toggler-icon"></span>
   	</button>
   	<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-    	<div class="navbar-nav">
-        <!-- <a class="nav-item nav-link active" href="/users">Home<span class="sr-only">(current)</span></a> -->
+    	<div class="navbar-nav ml-auto">
         <a class="nav-item nav-link" href="/join">Become a Camper!</a>  
         <a class="nav-item nav-link" href="/login">Login<span class="sr-only">(current)</span></a>
     	</div>
   	</div>
   </nav>
 
-<h1>This is the join page</h1>
+<h1 id="banner">Create an account and join your fellow campers!</h1>
 
-<form action="/join" method="POST">
-	<input type="text" name="username" placeholder="username">
-	<input type="text" name="displayname" placeholder="displayname">
-	<input type="password" name="password" placeholder="password">
-	<button type="submit">Submit</button>
+<form class="join-form" action="/join" method="POST">
+	<div class="form-group">
+		<label for="inputUsername">User Name</label>
+		<input type="text" class="form-control" name="username" id="innputUsername" aria-describedby="emailHelp" placeholder="Enter User Name">
+	</div>
+	<div class="form-group">
+			<label for="displayName">Display name</label>
+			<input type="text" class="form-control" name="displayname" id="displayName" aria-describedby="emailHelp" placeholder="Enter Display Name">
+	</div>
+	<div class="form-group">
+		<label for="inputPassword">Password</label>
+		<input type="password" class="form-control" name="password" id="inputPassword" placeholder="Enter Password">
+	</div>
+	<button type="submit" class="btn btn-info">Submit</button>
 </form>
+
+<div id="join-background"></div>
 
 <!-- Bootstrap JS -->
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
 </body>
+<footer>
+	<h5 id="copyright">Copyright CamAnda 2018</h5>
+	<p id="copyright">All images and content not written by CamAnda used for educational purposes only.</p>
+</footer>
 </html>
