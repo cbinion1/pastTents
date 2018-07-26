@@ -88,10 +88,7 @@ p {
     padding-top: 20px;
     padding-bottom: 20px;
 }
-/*#upload-input {
-    display: none;
-}*/
-#file-input {
+#upload-input {
     display: none;
 }
 #upload-body {
