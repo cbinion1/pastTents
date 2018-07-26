@@ -1,5 +1,8 @@
 const express = require('express');
 const app = express();
+const path = require('path');
+const formidable = require('formidable');
+const fs = require('fs');
 const bodyParser = require('body-parser');
 const methodOverride = require('method-override');
 const session = require('express-session');
@@ -7,6 +10,7 @@ const passport = require('passport');
 const localStrategy = require('passport-local');
 const GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
 const passportLocalMongoose = require('passport-local-mongoose');
+
 
 // require db
 require('./db/db');
@@ -23,7 +27,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 // use public folder for CSS
-app.use(express.static(__dirname + '/public'));
+app.use(express.static(path.join(__dirname + '/public')));
 
 // require our controllers
 const usersController = require('./controllers/users');
@@ -134,6 +138,44 @@ app.get('/auth/google/callback',
   	});
   	console.log(req.session, ' this is req.session');
   });
+
+// PHOTO UPLOAD
+
+app.get('/upload', function(req, res){
+  res.sendFile(path.join(__dirname, 'views/index.html'));
+});
+
+// app.post('/upload', function(req, res){
+
+//   // create an incoming form object
+//   const form = new formidable.IncomingForm();
+
+//   // specify that we want to allow the user to upload multiple files in a single request
+//   form.multiples = true;
+
+//   // store all uploads in the /uploads directory
+//   form.uploadDir = path.join(__dirname, '/uploads');
+
+//   // every time a file has been uploaded successfully,
+//   // rename it to it's orignal name
+//   form.on('file', function(field, file) {
+//     fs.rename(file.path, path.join(form.uploadDir, file.name));
+//   });
+
+//   // log any errors that occur
+//   form.on('error', function(err) {
+//     console.log('An error has occured: \n' + err);
+//   });
+
+//   // once all the files have been uploaded, send a response to the client
+//   form.on('end', function() {
+//     res.end('success');
+//   });
+
+//   // parse the incoming request containing the form data
+//   form.parse(req);
+
+// });
 
 // listen
 app.listen(3000, () => {
