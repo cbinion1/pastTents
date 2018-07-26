@@ -1,15 +1,35 @@
+/* ----------------------- All Pages ------------------ */
+body {
+    background:#CAE4DB;
+}
+.navbar {
+    background: #DEAE1D;
+}
+p {
+    margin: 0;
+}
 #title {
     font-family: 'Permanent Marker', cursive;
-    font-size: 60px;
-}
-#mainPageCarousel {
-    margin: auto;
-    max-width: 1000px;
-    max-height: 500px
+    font-size: 40px;
 }
 #copyright {
     font-size: 10px;
     text-align: center;
+}
+
+/* --------------------- Main Page -------------------- */
+
+/* .carousel-inner {
+    max-height: 600px;
+    max-width: auto;
+} */
+
+.carousel-inner > .item > img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    height: 500px;
 }
 .carousel-caption {
     font-family: 'Gloria Hallelujah', cursive;
@@ -17,22 +37,47 @@
 .nav-item {
     font-family: 'Gloria Hallelujah', cursive;
 }
-body {
-    background:#CAE4DB;
-}
-.navbar {
-    background: #DEAE1D;
-}
 .reviewSection {
     border: 1px solid;
     border-color: #00303F;
     margin: 5px;
     padding: 5px;
 }
-p {
-    margin: 0;
+
+/* ------------------- Welcome Page -------------------*/
+
+#welcome-header {
+    text-align: center;
+    font-family: 'Permanent Marker', cursive;
+}
+.card {
+    display: inline-block;
+    margin: 12px;
+}
+/* ---------------------- Join Page -------------------*/
+
+#join-background {
+    background-image: url(https://images.campgroundsigns.com/img/lg/K/camping-with-right-arrow-sign-k2-0356-r.png);
+    width: 800px;
+    height: 280px;
+    margin-left: auto;
+    margin-right: auto;
+}
+#banner {
+    font-family: 'Gloria Hallelujah', cursive;
+    text-align: center;
+    margin: 10px;
+}
+.join-form {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 400px;
+    text-align: center;
+    color: #00303F;
+    font-family: 'Gloria Hallelujah', cursive;
 }
 
+/* ---------------------- Login Page ----------------------*/
 
 
 
