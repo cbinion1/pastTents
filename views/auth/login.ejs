@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Past Tents</title>
+	<title id="title">Past Tents</title>
 	<!-- Bootstrap CSS -->
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
   <!-- My Custom CSS -->
   <link rel="stylesheet" type="text/css" href="/css/style.css">
+  <!-- Google Font families -->
+  <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah|Permanent+Marker" rel="stylesheet">
 </head>
 <body>
 	<nav class="navbar navbar-expand-lg navbar-light">
@@ -22,11 +24,11 @@
   	</div>
   </nav>
 
-<h1>Login</h1>
+<h1 id="banner">Welcome Back! Login below!</h1>
 
 <form action="/login" method="POST">
-	<input type="text" name="username" placeholder="username">
-	<input type="password" name="password" placeholder="password">
+	<input type="text" name="username" placeholder="username"><br/>
+	<input type="password" name="password" placeholder="password"><br/>
 	<button type="submit" class="btn btn-info">Login</button>
 </form>
 
@@ -37,4 +39,8 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
 </body>
+<footer>
+	<h5 id="copyright">Copyright CamAnda 2018</h5>
+	<p id="copyright">All images and content not written by CamAnda used for educational purposes only.</p>
+</footer>
 </html>
