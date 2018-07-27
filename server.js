@@ -33,6 +33,7 @@ app.use(express.static(path.join(__dirname + '/public')));
 const usersController = require('./controllers/users');
 const campsitesController = require('./controllers/campsites');
 const reviewsController = require('./controllers/reviews');
+var mongoUri = process.env.MONGODB_URI || 'mongodb://localhost:27017/grocery_app_dev';
 
 // set up controller routes
 app.use('/users', usersController);

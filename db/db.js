@@ -1,5 +1,7 @@
 const mongoose = require("mongoose");
 
+mongoose.connect(mongoUri);
+
 mongoose.connect("mongodb://localhost/pastTents");
 
 mongoose.connection.on("connected", () => {
