@@ -5,7 +5,7 @@ const Reviews = require('../models/reviews');
 
 
 // Index Route
-router.get('/', async (req, res, next) => {
+router.get('/', isLoggedIn, async (req, res, next) => {
 	try {
 		const foundCampsites = await Campsites.find();
 		res.render('campsites/index.ejs', {
@@ -17,12 +17,12 @@ router.get('/', async (req, res, next) => {
 });
 
 // New Route
-router.get('/new', (req, res) => {
+router.get('/new', isLoggedIn, (req, res) => {
 	res.render('campsites/new.ejs');
 });
 
 // Show Route
-router.get('/:id', (req, res) => {
+router.get('/:id', isLoggedIn, (req, res) => {
 	Campsites.findById(req.params.id, (err, foundCampsite) => {
 		console.log(foundCampsite, ' this is foundCampsite');
 		// Find all reviews on this campsite
@@ -36,7 +36,7 @@ router.get('/:id', (req, res) => {
 });
 
 // Edit Route
-router.get('/:id/edit', async (req, res, next) => {
+router.get('/:id/edit', isLoggedIn, async (req, res, next) => {
 	try {
 		const foundCampsite = await Campsites.findById(req.params.id);
 		res.render('campsites/edit.ejs', {
@@ -48,7 +48,7 @@ router.get('/:id/edit', async (req, res, next) => {
 });
 
 // Update Route
-router.put('/:id', async (req, res, next) => {
+router.put('/:id', isLoggedIn, async (req, res, next) => {
 	try {
     const updatedCampsite = await Campsites.findByIdAndUpdate(req.params.id, req.body, {new:true});
 		console.log(updatedCampsite, ' this is updatedCampsite');
@@ -59,7 +59,7 @@ router.put('/:id', async (req, res, next) => {
 });
 
 // Create Route
-router.post('/', async (req, res, next) => {
+router.post('/', isLoggedIn, async (req, res, next) => {
 	try {
 		const createdCampsite = await Campsites.create(req.body);
 		console.log(createdCampsite, ' this is createdCampsite');
@@ -70,7 +70,7 @@ router.post('/', async (req, res, next) => {
 });
 
 // Destroy Route
-router.delete('/:id', async (req, res, next) => {
+router.delete('/:id', isLoggedIn, async (req, res, next) => {
 	try {
 		const deletedCampsite = await Campsites.findByIdAndRemove(req.params.id);
 		console.log(deletedCampsite, ' this is deletedCampsite');
@@ -79,6 +79,16 @@ router.delete('/:id', async (req, res, next) => {
 		res.send(err);
 	}
 });
+
+function isLoggedIn (req, res, next) {
+	if(req.user) {
+		console.log('Authenticated');
+		return next();
+	} else {
+			console.log('Not Authenticated');
+			res.redirect('/login')
+	}
+};
 
 
 

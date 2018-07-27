@@ -2,37 +2,37 @@
 
 Hi, and welcome to Past Tents, a campsite review site created by Team CamAnda.
 
-Technologies Used
+Technologies Used<br/>
 HTML, CSS, Bootstrap, JavaScript, jQuery, Node, Express, MongoDB
 
-Installation Instructions
-Many npm packages were used for this app. Please install the following packages using the comand npm install *package name*
+Installation Instructions<br/>
+Many npm packages were used for this app. Please install the following packages using the command npm install *package name*
 
-body-parser
-ejs
-express
-express-session
-formidable
-fs
-method-override
-mongoose
-mongoose-findorcreate
-passport
-passport-google-oauth
-passport-local
-passport-local-mongoose
-request
+body-parser<br/>
+ejs<br/>
+express<br/>
+express-session<br/>
+formidable<br/>
+fs<br/>
+method-override<br/>
+mongoose<br/>
+mongoose-findorcreate<br/>
+passport<br/>
+passport-google-oauth<br/>
+passport-local<br/>
+passport-local-mongoose<br/>
+request<br/>
 
 A few other npm packages are listed as dependencies in package.json, but were not used in the application. Installation of the following is not required:
 
-bcrypt
-mongoose-file
-morgan
+bcrypt<br/>
+mongoose-file<br/>
+morgan<br/>
 
-Approach Taken
+Approach Taken<br/>
 Team CamAnda wanted to develop a website on a common interest, so we picked camping. At first, we only had models for users and campsites. We thought reviews would be part of the user model. However, we then decided reviews had enough info to be their own model. We limited the models so that you could only create a review after a campsite had been created. This was for data integrity, as people could possibly spell location names incorrectly and suddenly a review isn't showing up on a campsite page! From a user's view, there is a drop-down to pick the campsite you wish to review on new review. We added login after we had our main routes set up. We also added authentication with Google. 
 
-Unsolved Problems
+Unsolved Problems<br/>
 We really wanted users to be able to upload photos. We did get a file upload to the server working (visit /upload). However, we wanted the user photos to show on the campsite page. We did not have enough time to get the photos into the database. Next time, we will explore GF Grid.
 
 User Stories
