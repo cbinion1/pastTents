@@ -11,6 +11,7 @@ const localStrategy = require('passport-local');
 const GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
 const passportLocalMongoose = require('passport-local-mongoose');
 
+const mongoUri = process.env.MONGODB_URI || 'mongodb://localhost:27017/pastTents';
 
 // require db
 require('./db/db');
@@ -178,6 +179,7 @@ app.post('/upload', function(req, res){
 });
 
 // listen
-app.listen(3000, () => {
-	console.log('App is listening on port 3000');
+port = process.env.PORT || 3000;
+app.listen(port, () => {
+	console.log('Server running on port: ' + port);
 });
