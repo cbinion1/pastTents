@@ -11,28 +11,36 @@
 </head>
 <body>
 	<nav class="navbar navbar-expand-lg navbar-light">
-  	<a class="navbar-brand" href="/">Past Tents</a>
+  	<a class="navbar-brand" id="title" href="/">Past Tents</a>
   	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
     	<span class="navbar-toggler-icon"></span>
   	</button>
   	<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-    	<div class="navbar-nav">
-        <!-- <a class="nav-item nav-link active" href="/users">Home<span class="sr-only">(current)</span></a> -->
+    	<div class="navbar-nav ml-auto">
         <a class="nav-item nav-link" href="/join">Become a Camper!</a>  
         <a class="nav-item nav-link" href="/login">Login<span class="sr-only">(current)</span></a>
     	</div>
   	</div>
   </nav>
+  
+	<h1 id="banner">Welcome Back! Login below!</h1>
 
-<h1 id="banner">Welcome Back! Login below!</h1>
-
-<form action="/login" method="POST">
-	<input type="text" name="username" placeholder="username"><br/>
-	<input type="password" name="password" placeholder="password"><br/>
+<form class="login-form" action="/login" method="POST">
+	<div class="form-group">
+		<label for="inputUserName2">Enter Username</label>
+		<input type="email" class="form-control" name="username" id="inputUserName2" aria-describedby="userName" placeholder="Username">
+	</div>
+	<div class="form-group">
+		<label for="InputPassword1">Enter Password</label>
+		<input type="password" class="form-control" name="password" id="InputPassword1" placeholder="Password">
+	</div>
 	<button type="submit" class="btn btn-info">Login</button>
 </form>
+	<div id="google-login">
+		<a  href="/auth/google">Sign In with Google</a>
+	</div>
 
-<a href="/auth/google">Sign In with Google</a>
+<div id="join-background"></div>
 
 <!-- Bootstrap JS -->
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

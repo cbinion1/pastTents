@@ -25,6 +25,7 @@ router.get('/new', (req, res) => {
 // Show Route
 router.get('/:id', (req, res) => {
   Reviews.findById(req.params.id, (err, foundReview) => {
+    console.log(req.params.id);
     console.log(foundReview, ' this is foundReview');
     // find the campsite of the review
     Campsites.findOne({'reviews._id': req.params.id}, (err, foundCampsite) => {
