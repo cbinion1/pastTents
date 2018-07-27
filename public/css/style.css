@@ -49,6 +49,7 @@ p {
 #welcome-header {
     text-align: center;
     font-family: 'Permanent Marker', cursive;
+    color: #00303F
 }
 .card {
     display: inline-block;
@@ -62,6 +63,7 @@ p {
     height: 280px;
     margin-left: auto;
     margin-right: auto;
+    color: #00303F;
 }
 #banner {
     font-family: 'Gloria Hallelujah', cursive;
@@ -76,6 +78,41 @@ p {
     color: #00303F;
     font-family: 'Gloria Hallelujah', cursive;
 }
+#google-login {
+    margin-left: auto;
+    margin-right: auto;
+    font-family: 'Gloria Hallelujah', cursive;
+    color: #00303F;
+}
+
+/* ------------------ Login Page ------------------ */
+
+.login-form {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 400px;
+    text-align: center;
+    color: #00303F;
+    font-family: 'Gloria Hallelujah', cursive;
+}
+
+/* ----------------- Reviews New Page --------------*/
+
+.col {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 800px;
+    text-align: center;
+    font-family: 'Gloria Hallelujah', cursive;
+    color: #00303F;
+}
+
+
+
+
+
+/* ----------------- Upload Page -------------------*/
+
 #upload-h4 {
   padding-bottom: 30px;
   color: #B8BDC1;
