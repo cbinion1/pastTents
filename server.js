@@ -49,7 +49,7 @@ passport.deserializeUser((user, done) => done(null, user));
 passport.use(new GoogleStrategy({
     clientID: "316136943987-ofqcnosgte4ionkd7q50jojqu5h1i05a.apps.googleusercontent.com",
     clientSecret: "R_Bdwc2QcHz2Pl1zBaqmthzf",
-    callbackURL: "http://localhost:3000/auth/google/callback"
+    callbackURL: "http://past--tents.herokuapp.com/auth/google/callback"
   },
   function(accessToken, refreshToken, profile, done) {
        User.findOrCreate({ googleId: profile.id, displayName: profile.displayName }, function (err, user) {
