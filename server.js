@@ -176,7 +176,7 @@ app.post('/upload', function(req, res){
   form.parse(req);
 
 });
-
+port = process.env.PORT || 3000;
 // listen
 app.listen(3000, () => {
 	console.log('App is listening on port 3000');
