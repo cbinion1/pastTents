@@ -11,7 +11,6 @@ const localStrategy = require('passport-local');
 const GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
 const passportLocalMongoose = require('passport-local-mongoose');
 
-
 // require db
 require('./db/db');
 
@@ -33,7 +32,6 @@ app.use(express.static(path.join(__dirname + '/public')));
 const usersController = require('./controllers/users');
 const campsitesController = require('./controllers/campsites');
 const reviewsController = require('./controllers/reviews');
-var mongoUri = process.env.MONGODB_URI || 'mongodb://localhost:27017/grocery_app_dev';
 
 // set up controller routes
 app.use('/users', usersController);
@@ -51,7 +49,11 @@ passport.deserializeUser((user, done) => done(null, user));
 passport.use(new GoogleStrategy({
     clientID: "316136943987-ofqcnosgte4ionkd7q50jojqu5h1i05a.apps.googleusercontent.com",
     clientSecret: "R_Bdwc2QcHz2Pl1zBaqmthzf",
+<<<<<<< HEAD
     callbackURL: "http:///past-tents.herokuapp.com/auth/google/callback"
+=======
+    callbackURL: "http://past--tents.herokuapp.com/auth/google/callback"
+>>>>>>> 7de5183b73e316584a0d208fad9db8fe953b7003
   },
   function(accessToken, refreshToken, profile, done) {
        User.findOrCreate({ googleId: profile.id, displayName: profile.displayName }, function (err, user) {
@@ -179,6 +181,7 @@ app.post('/upload', function(req, res){
 });
 port = process.env.PORT || 3000;
 // listen
-app.listen(3000, () => {
-	console.log('App is listening on port 3000');
+port = process.env.PORT || 3000;
+app.listen(port, () => {
+	console.log('Server running on port: ' + port);
 });
