@@ -49,11 +49,7 @@ passport.deserializeUser((user, done) => done(null, user));
 passport.use(new GoogleStrategy({
     clientID: "316136943987-ofqcnosgte4ionkd7q50jojqu5h1i05a.apps.googleusercontent.com",
     clientSecret: "R_Bdwc2QcHz2Pl1zBaqmthzf",
-<<<<<<< HEAD
-    callbackURL: "http:///past-tents.herokuapp.com/auth/google/callback"
-=======
     callbackURL: "http://past--tents.herokuapp.com/auth/google/callback"
->>>>>>> 7de5183b73e316584a0d208fad9db8fe953b7003
   },
   function(accessToken, refreshToken, profile, done) {
        User.findOrCreate({ googleId: profile.id, displayName: profile.displayName }, function (err, user) {
@@ -179,7 +175,7 @@ app.post('/upload', function(req, res){
   form.parse(req);
 
 });
-port = process.env.PORT || 3000;
+
 // listen
 port = process.env.PORT || 3000;
 app.listen(port, () => {
