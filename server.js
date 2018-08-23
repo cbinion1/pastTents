@@ -176,6 +176,10 @@ app.post('/upload', function(req, res){
 
 });
 
+const mongoUri = process.env.MONGODB_URI || 'mongodb://localhost:27017/pastTents';
+
+mongoose.connect(mongoUri);
+
 // listen
 port = process.env.PORT || 3000;
 app.listen(port, () => {
