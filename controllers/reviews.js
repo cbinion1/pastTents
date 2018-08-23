@@ -5,7 +5,7 @@ const Reviews = require('../models/reviews');
 
 
 // Route Route
-router.get('/', (req, res) => {
+router.get('/', isLoggedIn, (req, res) => {
     Reviews.find({}, (err, foundReviews) => {
         res.render('reviews/index.ejs', {
           reviews: foundReviews
@@ -14,7 +14,7 @@ router.get('/', (req, res) => {
 });
 
 // New Route
-router.get('/new', (req, res) => {
+router.get('/new', isLoggedIn, (req, res) => {
   Campsites.find({}, (err, allCampsites) => {
     res.render('reviews/new.ejs', {
       campsites: allCampsites
@@ -23,7 +23,7 @@ router.get('/new', (req, res) => {
 });
 
 // Show Route
-router.get('/:id', (req, res) => {
+router.get('/:id', isLoggedIn, (req, res) => {
   Reviews.findById(req.params.id, (err, foundReview) => {
     console.log(req.params.id);
     console.log(foundReview, ' this is foundReview');
@@ -39,7 +39,7 @@ router.get('/:id', (req, res) => {
 });
 
 //  Edit Route
-  router.get('/:id/edit', (req, res) => {
+  router.get('/:id/edit', isLoggedIn, (req, res) => {
     Reviews.findById(req.params.id, (err, foundReview) => {
       // Find all the campsites, so we can select them in the drop down menu when we are editing
       Campsites.find({}, (err, allCampsites) => {
@@ -56,7 +56,7 @@ router.get('/:id', (req, res) => {
   });
   
 // Post Route
-  router.post('/', (req, res) => {
+  router.post('/', isLoggedIn, (req, res) => {
     console.log(req.body, ' this is req.body')
     // create a review, push a copy into the Campsite reviews array
     Campsites.findById(req.body.campsiteId, (err, foundCampsite) => {
@@ -74,7 +74,7 @@ router.get('/:id', (req, res) => {
   });
   
   // Delete Route
-  router.delete('/:id', (req, res) => {
+  router.delete('/:id', isLoggedIn, (req, res) => {
     Reviews.findByIdAndRemove(req.params.id, (err, deletedReview) => {
       console.log(deletedReview, " This is the deleted review");
       // Find the campsite with that review
@@ -89,7 +89,7 @@ router.get('/:id', (req, res) => {
   });
 
   // Put Route
-  router.put('/:id', (req, res) => {
+  router.put('/:id', isLoggedIn, (req, res) => {
     Reviews.findByIdAndUpdate(req.params.id, req.body, {new: true}, (err, updatedReview)=> {
       console.log(updatedReview, " This is the updated review");
       // Find the campsite with that review
@@ -120,5 +120,14 @@ router.get('/:id', (req, res) => {
     });
   });
 
+function isLoggedIn (req, res, next) {
+  if(req.user) {
+    console.log('Authenticated');
+    return next();
+  } else {
+      console.log('Not Authenticated');
+      res.redirect('/login')
+  }
+};
 
 module.exports = router;
